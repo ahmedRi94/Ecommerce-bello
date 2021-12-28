@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card my-5" *ngFor="let ord of orders">
+        <div class="card-header">
+            Ordine da <b>{{ ord.customer.name }} {{ord.customer.surname}}</b>
+        </div>
+        <div class="card-body">
+            <h5>Indirizzo: {{ord.customer.address}} - {{ord.customer.cap}} {{ord.customer.city}} {{ord.customer.country}}</h5>
+
+            <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Quantità</th>
+                    <th scope="col">Prezzo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let prod of ord.products">
+                    <td><img src="{{prod.img[1]}}" alt="" width="75px" height="75px"></td>
+                    <td>{{prod.name}}</td>
+                    <td>{{prod.brand}}</td>
+                    <td>{{prod.quantity}}</td>
+                    <td>{{prod.price}}</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+
+
+

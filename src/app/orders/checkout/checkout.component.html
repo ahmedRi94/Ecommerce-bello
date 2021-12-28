@@ -1,0 +1,63 @@
+<div class="container">
+    <dl>
+        <dd>Name:</dd>
+        <dt>{{name}} {{surname}}</dt>
+        <dd>Email:</dd>
+        <dt>{{email}}</dt>
+        <dd>Address:</dd>
+        <dt>{{address}} - {{cap}} - {{city}}</dt>
+        <dd>Country</dd>
+        <dt>{{country}}</dt>
+        <dd>Payment Method</dd>
+        <dt>{{paymentMethod}}</dt>
+    </dl>
+    <form #formCtrl="ngForm">
+        <fieldset>
+            <div class="form-floating mb-3">
+                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="name" placeholder="name" required>
+                <label for="name">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="surname" name="surname" class="form-control" [(ngModel)]="surname" placeholder="surname" required>
+                <label for="name">Surname</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="email" placeholder="example@example.com" required>
+                <label for="name">Email</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="address" name="address" class="form-control" [(ngModel)]="address" placeholder="Street, nr" required>
+                <label for="name">Address</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" min="1000" id="cap" name="cap" class="form-control" [(ngModel)]="cap" placeholder="Street, nr" required>
+                <label for="name">Cap</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="city" name="city" class="form-control" [(ngModel)]="city" placeholder="City" required>
+                <label for="name">City</label>
+            </div>
+            <div class="form-floating">
+                <select class="form-select" id="selectCountry" name="country" aria-label="Select Country" [(ngModel)]="country">
+                  <option selected>Country</option>
+                  <option attr.value="Italy">Italy</option>
+                  <option attr.value="United States">United States</option>
+                  <option attr.value="Japan">Japan</option>
+                </select>
+                <label for="selectCountry">Country</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="paymentMethods" id="creditCard" value="Credit Card" [(ngModel)]="paymentMethod">
+                <label class="form-check-label" for="creditCard">Credit Card</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="paymentMethods" id="cash" value="Cash" [(ngModel)]="paymentMethod">
+                <label class="form-check-label" for="cash">Cash</label>
+            </div>
+            <div>
+                <button *ngIf="!inviati" type="submit" name="submitButton" class="btn btn-primary" [disabled]="!formCtrl.form.valid" (click)="customerSendData(formCtrl)">invia</button>
+                <p *ngIf="inviati">Dati inviati clicca su completa per concludere il tuo ordine</p>
+            </div>
+        </fieldset>
+    </form>
+</div>

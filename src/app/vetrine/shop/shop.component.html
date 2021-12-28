@@ -1,0 +1,46 @@
+  <div class="container-fluid px-0">
+    <div class="row">
+      <div class="col-md-12">
+           <img src="../../../assets/shop_banner.png" class="img-fluid w-100"
+            alt="offerte banner">
+            <div class="banner">
+                <h1 class="text-center"><i class="fas fa-chevron-down"></i> Scopri i nostri Prodotti <i class="fas fa-chevron-down"></i></h1>
+            </div>
+         
+      </div>
+    </div>
+</div>
+<div class="album py-5 bg-light">
+  <div class="container ">
+    <div class="row justify-content-end">
+      <div class="col-3"  *ngIf="role === null">
+        <a class="btn btn-primary" [routerLink]="['/user','login']">Accedi per fare acquisti</a>
+       </div>   
+       <div class="col-3 d-flex flex-column">
+        <label for="filterString">Cerca:</label>
+        <input class="input-filterSearch" type="text" name="filterString" id="filterString" [(ngModel)]="filterString">
+       </div>  
+       <div class="col-3">
+        <label for="typeSelect">Tipo:</label>
+        <select id="typSelect" class="form-select " aria-label="type" [(ngModel)]="selectedType" >
+          <option value="Any" selected>Any</option>
+          <option *ngFor="let type of types" [attr.value]="type">{{type}}</option>
+        </select>
+       </div>
+      <div class="col-3">
+        <label for="brandSelect">Marca:</label>
+        <select id="brandSelect" class="form-select" aria-label="brand" [(ngModel)]="selectedBrand" >
+          <option value="Any" selected>Any</option>
+          <option *ngFor="let brand of brands" [attr.value]="brand">{{brand}}</option>
+        </select>
+      </div>
+    </div>
+    </div>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <ng-container *ngFor="let product of products | filterSearch:filterString:'brand':'name':'type':'description'">
+        <app-card filterShop [currentValue]="[selectedBrand, selectedType]" [objValue]="[product.brand, product.type]" [prodotto]="product" (addCartEvent)="addCartElement($event)"></app-card>
+      </ng-container>
+    </div>
+  </div>
+</div>

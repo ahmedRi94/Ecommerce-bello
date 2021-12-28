@@ -1,0 +1,55 @@
+<div class="container mt-5 mb-5">
+    <div class="card">
+        <div class="row g-0">
+            <div class="col-md-6 border-end">
+                <div class="d-flex flex-column justify-content-center" *ngIf="product.img.length > 1">
+                    <div class="main_image">
+                        <img [src]="imgShow" id="main_product_image" width="350">
+                    </div>
+                    <div class="thumbnail_images">
+                        <ul id="thumbnail">
+                            <ng-container *ngFor="let item of product.img; first as isFirst">
+                                <li (click)="changeImg(item)" *ngIf="!isFirst" [ngClass]="{'active': item===imgShow}">
+                                    <img [src]="item" width="70">
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-flex flex-column justify-content-center" *ngIf="product.img.length === 1">
+                    <div class="main_image">
+                        <img [src]="product.img[0]" id="main_product_image" width="350">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 right-side">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3>{{product.name}}</h3>
+                        <span class="heart" style="cursor: pointer;" (click)="like($event)">
+                            <i class='fa fa-heart'></i>
+                        </span>
+                    </div>
+                    <div class="mt-2 pr-3 content">
+                        <p>{{product.description}}</p>
+                    </div>
+                    <h3 *ngIf="product.onSales === false" class="float-end price">{{product.price}} &euro;</h3>
+                    <h3 *ngIf="product.onSales === true" class="float-end price"><span class="badge bg-warning">in offerta a {{product.price - product.price * product.discount /100 |currency: 'EUR'}}</span>&nbsp;<s>{{product.price |currency: 'EUR'}}</s></h3>
+                    <div class="ratings d-flex flex-row align-items-center">
+                        <div class="d-flex flex-row">
+                            <i class='fa fa-star checked'></i>
+                            <i class='fa fa-star checked'></i>
+                            <i class='fa fa-star checked'></i>
+                            <i class='fa fa-star checked'></i>
+                            <i class='fa fa-star checked'></i>
+                        </div>
+                        <span>441 visualizzazioni</span>
+                    </div>
+                    <div class="buttons d-flex flex-row mt-5 gap-3 justify-content-center">
+                        <button (click)="addCartElement(product.id)" class="btn btn-outline-dark">Aggiungi al carrello</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border: 1px solid;
+    border-radius: 50px;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 27px;
+}
+
+.scroll-to-top:hover {
+    background: #cacaca98;
+    border: 1px solid #cacaca98;
+}
+
+.show-scrollTop {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}

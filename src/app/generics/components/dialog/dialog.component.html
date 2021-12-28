@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Elimina Prodotto</h1>
+<div mat-dialog-content>
+    <p>Sei sicuro di voler eliminare <b>{{data.name}}</b> ?</p>
+    <button class="btn btn-warning" (click)="cancel()">Annulla</button>&nbsp;
+    <button class="btn btn-danger" (click)="confirm(data.id)">Conferma</button>
+</div>
+

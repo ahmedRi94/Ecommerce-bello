@@ -1,0 +1,35 @@
+.mainbox {
+    text-align: center;
+  }
+  
+    .err {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 11rem;
+      color: orangered;
+    }
+
+    .err1 {
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 3rem;
+    }
+  
+  
+  .msg {
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 1.4rem;
+      margin-top: 50px;
+    }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .fa-times {
+    margin-left: 10px;
+    margin-right: 10px;
+    color: red;
+  }

@@ -1,0 +1,33 @@
+<app-slide [slides]="slides" [carouselId]="carouselId"></app-slide>
+
+	<section id="summer-collection">
+		<div class="container">
+			<div class="sc-content">
+				<h1>Summer Collection</h1>
+				<p class="description">Scopri la nostra nuova collezione estiva di prodotti tech.Per quest'estate abbiamo aggiunto nuovi prodotti tra cui
+          pc con processore ryzen e prodotti per tablet e console. Vieni a scoprire i nostri prodotti estivi,<strong>hai tempo fino al 30 agosto!</strong>.</p>
+          <a routerLink="/offerte">Scoprili Ora</a></div>
+			<div class="sc-media">
+				<div class="sc-media-bg"> <img src="https://storage-asset.msi.com/global/picture/news/2020/mb/streaming-pc-20200806-1.jpg" alt="sc-image" /> </div>
+			</div>
+		</div>
+	</section>
+	<section id="products">
+		<div class="container">
+			<div class="products-header">
+				<h2>Popular Products</h2>
+				<p>Alcuni dei nostri prodotti più acquistati</p>
+			</div>
+			<div class="row">
+				<div class="col-12 col-xl-3 col-md-6" *ngFor="let prod of prodotti" [routerLink]="['/prodotto', prod.id]">
+					<div class="product product-1">
+						<figure> <img [src]="prod.img[1]" alt="product-image">
+							<figcaption>{{prod.name}}</figcaption>
+							<figcaption>{{prod.price | currency:'EUR'}}</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+  <br><br>

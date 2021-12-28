@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 my-5">
+            <h1>Prodotti nel database:</h1><hr>
+            <div class="col-8 mx-auto">
+                <ul>
+                    <li class="d-flex justify-content-between flex-row border" *ngFor="let product of products">
+                        <a class="product-name" [routerLink]="['/prodotto/', product.id]">{{product.name}}</a>&nbsp;
+                        <div class="d-flex flex-row">
+                            <a class="btn btn-warning" [routerLink]="['/edit-prodotto/', product.id]">Modifica</a>&nbsp;
+                            <button mat-button class="btn btn-danger" (click)="openDialog(product)">Elimina</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+

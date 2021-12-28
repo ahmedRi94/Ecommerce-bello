@@ -1,0 +1,94 @@
+<div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11 m-4">
+            <div class="card text-black" style="border-radius: 25px;">
+                <div class="card-body p-md-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 col-lg-8 col-xl-6 order-2 order-lg-1">
+
+                            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0 me-3">
+                                    <input type="text" id="name" class="form-control" [(ngModel)]="name">
+                                    <label class="form-label" for="name">Nome</label>
+                                </div>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="text" id="surname" class="form-control" [(ngModel)]="surname">
+                                    <label class="form-label" for="surname">Cognome</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="email" id="email" class="form-control" [(ngModel)]="email">
+                                    <label class="form-label" for="email">Email</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-map-marked-alt fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0 me-3">
+                                    <input type="text" id="address" class="form-control" [(ngModel)]="address">
+                                    <label class="form-label" for="address">Indirizzo</label>
+                                </div>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="text" id="country" class="form-control" [(ngModel)]="country">
+                                    <label class="form-label" for="country">Paese</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-map-pin fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0 me-3">
+                                    <input type="text" id="city" class="form-control" [(ngModel)]="city">
+                                    <label class="form-label" for="city">Città</label>
+                                </div>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="number" id="cap" class="form-control" [(ngModel)]="cap">
+                                    <label class="form-label" for="cap">Cap</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="password" id="password" class="form-control" [(ngModel)]="password">
+                                    <label class="form-label" for="password">Password</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-row align-items-center mb-4">
+                                <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                <div class="form-outline flex-fill mb-0">
+                                    <input type="password" id="Cpassword" class="form-control" [(ngModel)]="Cpass">
+                                    <label class="form-label" for="Cpassword">Conferma Password</label>
+                                </div>
+                            </div>
+
+                            <div class="form-check d-flex justify-content-center mb-5">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                <label class="form-check-label" for="form2Example3">
+                        I agree all statements in <a href="#!">Terms of service</a>
+                      </label>
+                            </div>
+                            <div class="container" #errorStamp></div>
+                            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                <button type="button" class="btn btn-primary btn-lg" (click)="signUp()"><i class="fas fa-paper-plane"></i> Registrati</button>
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-8 col-lg-4 col-xl-5 d-flex align-items-center order-1 order-lg-2">
+
+                            <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png" class="img-fluid" alt="Sample image">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

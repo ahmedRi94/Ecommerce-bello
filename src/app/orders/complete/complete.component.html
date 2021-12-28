@@ -1,0 +1,64 @@
+
+
+<h1 id="congr">Congratulazioni, il pagamento è andato a buon fine.</h1>
+
+<span class="it1"><div id="gif"><iframe src="https://giphy.com/embed/5fBH6zoy1szfjORd14s" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p></div>
+</span>
+<h2 id="conf">Complimenti {{customer.name }}.Il tuo ordine è confermato e verrà spedito a breve.</h2>
+
+
+<h3 id="orderN">Ecco il tuo numero d'ordine con il quale potrai verificare lo stato della spedizione: {{codice}}</h3>
+
+<div class="container-delivery">
+    <div class="row">
+      <div class="col">
+        La tua consegna è prevista per: 
+        <ul>
+          <li><span id="date">{{data | date}}</span></li>
+          <li><span id="date">Indirizzo: {{customer.address}}, {{customer.cap }}, {{customer.city}}</span></li>
+        </ul>
+        
+      </div>
+      <div class="col" id="tracking">
+        Traccia il mio ordine
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <h4 id="riepilogo">Riepilogo ordine:</h4>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag-check" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg></th>
+        <th scope="col">Prodotto</th>
+        <th scope="col">Quantità</th>
+        <th scope="col">Prezzo unità</th>
+        <th scope="col">Prezzo finale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prodotto of cart;index as i">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{prodotto.name}}</td>
+        <td>{{prodotto.quantity}}</td>
+        <td>{{prodotto.price |currency: 'EUR'}}</td>
+        <td>{{prodotto.quantity * prodotto.price|currency: 'EUR'}}</td>
+      </tr> 
+    </tbody>
+    <tfoot>
+      <th scope="row">tot</th>
+        <td></td>
+        <td>{{nArticoli}}</td>
+        <td>{{prezzo|currency: 'EUR'}}</td>
+        <td>{{prezzoTot|currency: 'EUR'}}</td>
+    </tfoot>
+  </table>
+
+</div>
+
+

@@ -1,0 +1,28 @@
+<div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+    <div class="justify-content-center row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+        <div class="col-auto">
+            <div class="card h-100">
+                <ng-container *ngIf="prodotto.img.length>1">
+                    <img [src]="prodotto.img[1]" class="card-img-top" alt="{{prodotto.name}}">
+                </ng-container>
+                <ng-container *ngIf="prodotto.img.length===1">
+                    <img [src]="prodotto.img[0]" class="card-img-top" alt="{{prodotto.name}}">
+                </ng-container>
+                <div class="card-body">
+                    <div class="clearfix mb-3">
+                        <span class="float-start badge rounded-pill bg-primary">{{prodotto.name}}</span>
+                        <span *ngIf="prodotto.onSales === false" class="float-end price">{{prodotto.price}} &euro;</span>
+                        <span *ngIf="prodotto.onSales === true" class="float-end price"><span class="badge bg-warning">in offerta a {{prodotto.price - prodotto.price * prodotto.discount /100 |currency: 'EUR'}}</span>&nbsp;<s>{{prodotto.price |currency: 'EUR'}}</s></span>
+                    </div>
+                    <h5 class="card-title">{{prodotto.description}}</h5>
+                    <div class="text-center my-4">
+                        <a [routerLink]="['/prodotto/', prodotto.id]" class="btn btn-primary">Visualizza Prodotto</a>
+                    </div>
+                    <div class="text-center my-4">
+                        <button (click)="addCart()" class="btn btn-warning" [routerLink]="['/ordine','carrello']"><i class="fas fa-shopping-cart"></i> Compra Subito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

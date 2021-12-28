@@ -1,0 +1,80 @@
+ <!-- ======= sezione su di noi ======= -->
+ <br><br>
+ <h1>Chi Siamo</h1>
+ <hr>
+ <section id="about" class="about">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
+        <img src="https://www.verdict.co.uk/wp-content/uploads/2021/04/shutterstock_1583248045.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
+        <h3>Azienda eccellente nella vendita di prodotti online e tra le migliori al mondo.</h3>
+        <p class="fst-italic">
+          Dal 2012 siamo nel settore dell'e-commerce con ottime recensioni da parte dei clienti.Siamo una delle aziende cardine del settore,vincendo tre volte il premio 4Ecom come miglior azienda italiana.
+        </p>
+        <ul>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>Sicura ed efficente nelle consegne dei nostri prodotti.</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg>Resa e Garanzia per ogni singolo prodotto che noi vendiamo.</li>
+          <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+            <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+            <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+          </svg> Pagamento sicuro e vendita di diversi prodotti di ottima qualità nel settore tech.</li>
+        </ul>
+        <p>
+          Con diversi partner disponiamo di diversi prodotti tech che variano dal gaming agli smartphone ai pc. per ogni prodotto disponimao di diverse opzioni di scelta e personalizzazione(in base al tipo di prodotto che viene scelto).
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<br><br>
+<!-- ======= sezione perchè sceglierci ======= -->
+<section id="why-us" class="why-us">
+  <div class="container">
+
+    <div class="row">
+      <h2>Perchè Sceglierci</h2>
+      <div class="col-lg-4" *ngFor="let item of motivazioni;" data-aos="fade-up">
+        <div class="box">
+          <span>{{item.span}}</span>
+          <h4>{{item.titolo}}</h4>
+          <p>{{item.descrizione}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br>
+<!-- ======= Sezione brand ======= -->
+
+<section class="logo-list">
+  <h2>Alcuni Brand che noi vendiamo</h2>
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-2 col-md-4 col-6" *ngFor="let item of immagini;">
+              <a><img [src]="item.imgsrc"></a>
+          </div>
+      </div>
+  </div>
+</section>
+<br><br>
+<!-- ======= Bottone contattaci ======= -->
+
+<section>
+  <h2>Se desideri maggiori Informazioni o Contattarci</h2>
+   <div class="bottone">
+   <br>
+   <button type="button" class="btn btn-outline-primary" routerLink="/faq">Contattaci</button>
+   </div>
+</section>
+<br><br>
+

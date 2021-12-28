@@ -1,0 +1,30 @@
+<div class="container my-5">
+    <nav>
+        <div class="nav nav-tabs justify-content-between" id="nav-tab" role="tablist">
+          <button class="nav-link" id="nav-cart" [routerLink]="['/ordine','carrello']" routerLinkActive="active" (click)="changeView('nav-cart')"><i class="fas fa-cart-arrow-down"></i></button>
+          <button class="nav-link" id="nav-checkout" [routerLink]="['/ordine', 'checkout']" routerLinkActive="active" (click)="changeView('nav-checkout')"><i class="fas fa-user-edit"></i></button>
+          <button class="nav-link" id="nav-complete" [routerLink]="['/ordine','complete']" routerLinkActive="active" (click)="changeView('nav-complete')"><i class="fas fa-clipboard-check"></i></button>
+          <!-- <button class="nav-link" id="nav-cart" [ngClass]="{active: toShow === 'nav-cart'}" (click)="changeView('nav-cart')"><i class="fas fa-cart-arrow-down"></i></button>
+          <button class="nav-link" id="nav-checkout" [ngClass]="{active: toShow === 'nav-checkout'}" (click)="changeView('nav-checkout')"><i class="fas fa-user-edit"></i></button>
+          <button class="nav-link" id="nav-complete" [ngClass]="{active: toShow === 'nav-complete'}" (click)="changeView('nav-complete')"><i class="fas fa-clipboard-check"></i></button> -->
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade my-5 active show" id="nav-cart-content" role="tabpanel" >
+            <router-outlet></router-outlet>
+        </div>  
+        <!-- <div class="tab-pane fade my-5" id="nav-cart-content" role="tabpanel" [ngClass]="{'active show': toShow === 'nav-cart'}">
+            <app-cart></app-cart>
+        </div>
+        <div class="tab-pane fade my-5" id="nav-checkout-content" role="tabpanel" [ngClass]="{'active show': toShow === 'nav-checkout'}">
+            <app-checkout (customerSend)="customerDataSend = $event"></app-checkout>
+        </div>
+        <div class="tab-pane fade my-5" id="nav-contact" role="tabpanel" [ngClass]="{'active show': toShow === 'nav-complete'}">
+            <app-complete></app-complete>
+        </div> -->
+      </div>
+      <div class="d-flex flex-row-reverse mt-3">
+          <button type="button" class="btn btn-primary ms-3" *ngIf="toShow !== 'nav-complete'" (click)="changeView('next')" [disabled]="(!customerDataSend && toShow === 'nav-checkout')">{{(toShow === 'nav-checkout')? 'Completa' :'Next'}}</button>
+        <button type="button" class="btn btn-light" *ngIf="toShow === 'nav-checkout'" (click)="changeView('back')">Back</button>
+      </div>
+</div>

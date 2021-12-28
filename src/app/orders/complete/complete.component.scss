@@ -1,0 +1,51 @@
+.it1 {
+display: flex;
+justify-content: center;
+margin-top: 4%;
+}
+
+#congr {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#conf{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+
+}
+
+#orderN{
+    display: flex;
+    justify-content: center; 
+    margin-top: 5%;
+}
+
+#gif{
+    display: flex;
+    justify-content: center; 
+}
+
+.container-delivery{
+    background-color: rgb(209, 201, 201);
+    padding: 1%;
+    width: 78%;
+    margin-left: 11%;
+}
+
+#date{
+    color: green;
+}
+
+#tracking{
+    text-align: right;
+    font-weight: 700;
+    cursor: pointer;
+}
+#riepilogo{
+    margin-top: 4%;
+
+}
+

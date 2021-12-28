@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mx-auto my-5">
+            <form (ngSubmit)="checkUser()">
+                <div class="mb-3">
+                  <label for="inputmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputmail" name="inputmail" [(ngModel)]="email">
+                </div>
+                <div class="mb-3">
+                  <label for="inputpwd" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="inputpwd" name="inputpwd" [(ngModel)]="password">
+                </div>
+                <div class="mb-3 text-center">
+                  <button type="submit" class="btn btn-primary">Accedi</button>
+                </div>
+              </form>
+              <div class="text-center">
+                <p>Non sei ancora registrato? <a [routerLink]="['/user','sign-up']">Registrati</a></p>
+              </div>
+        </div>
+    </div>
+</div>
